@@ -4,7 +4,7 @@ const Pokedex = ({ pokemon, totalExp, isWinner }) => {
       {pokemon.map(({ id, name, type, base_experience }) => {
         const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         return (
-          <div className="card">
+          <div className="card" key={id}>
             <Pokecard key={id}>
               <h3>{name}</h3>
               <img src={imageUrl} alt={name} />
