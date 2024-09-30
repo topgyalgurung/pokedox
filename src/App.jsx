@@ -4,6 +4,9 @@
 //  the same way you would in a module-based environment like a Create React App project.
 //  The React and ReactDOM libraries are globally available, so you can directly use them in your script.
 
+import Pokegame from "./Pokegame";
+import "./style.css";
+
 const App = () => {
   const pokedoxFeatures = [
     { id: 4, name: "Charmander", type: "fire", base_experience: 62 },
@@ -16,14 +19,6 @@ const App = () => {
     { id: 133, name: "Eevee", type: "normal", base_experience: 65 },
   ];
   return (
-    // <div className="container">
-    //   {pokedoxFeatures.map((feature) => (
-    //     <ul key={feature.id}>
-    //       <Pokedex {...feature} />
-    //     </ul>
-    //   ))}
-    // </div>
-
     <div>
       <h2>Pokedex</h2>
       {/* modify to render Pokegame */}
@@ -32,4 +27,4 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App;

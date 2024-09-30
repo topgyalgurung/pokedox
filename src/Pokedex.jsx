@@ -1,3 +1,4 @@
+import Pokecard from "./Pokecard";
 const Pokedex = ({ pokemon, totalExp, isWinner }) => {
   return (
     <div className="container">
@@ -19,3 +20,4 @@ const Pokedex = ({ pokemon, totalExp, isWinner }) => {
     </div>
   );
 };
+export default Pokedex;

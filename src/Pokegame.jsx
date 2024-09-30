@@ -1,3 +1,4 @@
+import Pokedex from "./Pokedex";
 const Pokegame = ({ pokedoxFeatures }) => {
   // Pokegame should take list of 8 pokemon and randomly assign into two hands of 4 cards
   const hand1 = [];
@@ -42,5 +43,4 @@ const Pokegame = ({ pokedoxFeatures }) => {
     </div>
   );
 };
-
-// export default Pokegame;
+export default Pokegame;
