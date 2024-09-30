@@ -16,7 +16,7 @@ const Pokedex = ({ pokemon, totalExp, isWinner }) => {
         );
       })}
       <p>Total experience: {totalExp}</p>
-      {isWinner && <h2> {" ⬆️ "}THIS HAND WINS!</h2>}
+      {isWinner && <h2> {" ⬆️ "}THIS 🤲 WINS!</h2>}
     </div>
   );
 };
