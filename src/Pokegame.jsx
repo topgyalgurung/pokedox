@@ -1,5 +1,8 @@
 
 import Pokedex from "./Pokedex";
+import RefreshButton from "./Button";
+import PropTypes from 'prop-types';
+
 const Pokegame = ({ pokedoxFeatures }) => {
   // Pokegame should take list of 8 pokemon and randomly assign into two hands of 4 cards
   const hand1 = [];
@@ -12,6 +15,7 @@ const Pokegame = ({ pokedoxFeatures }) => {
   for (let i = 0; i < 4; i++) {
     // Generate a random index within the remaining indices
     const randomIndex1 = Math.floor(Math.random() * index.length);
+
     // Remove the randomly selected index from the array and get its value.
     // 'index1' contains the value that was removed from 'index'
     const index1 = index.splice(randomIndex1, 1)[0];
@@ -40,8 +44,19 @@ const Pokegame = ({ pokedoxFeatures }) => {
     <div>
       <Pokedex pokemon={hand1} totalExp={totalExp1} isWinner={isHand1Winner} />
 
+      <RefreshButton/>
+
       <Pokedex pokemon={hand2} totalExp={totalExp2} isWinner={!isHand1Winner} />
     </div>
   );
 };
+
+Pokegame.propTypes = {
+  pokedoxFeatures: PropTypes.arrayOf(
+    PropTypes.shape({
+      base_experience: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
+
 export default Pokegame;

@@ -1,0 +1,27 @@
+
+.refreshButton {
+
+     /* Change positioning */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;  /* Ensure button stays on top */
+    margin: 20px auto;  /* Add vertical spacing */
+
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.refreshButton:hover {
+    background-color: #45a049;
+}
