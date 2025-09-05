@@ -1,40 +1,111 @@
+.pokegame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  gap: 1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
 .container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 100;
-  gap: 0.5rem; /* Optional: adds spacing between the cards */
+  gap: 0.75rem;
+  position: relative;
+}
+
+.container p {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #495057;
+  margin: 0.5rem 0;
+  font-weight: 500;
 }
 
 .card {
-  background-color: gainsboro;
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem;
   text-align: center;
-  flex: 1; /* Each card will take equal space */
-  max-width: 300px; /* Optional: restricts the width of each card */
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  opacity: 0;
-  transform: translateY(20px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin: 0.25rem 0;
+}
+
+.card h3 {
+  color: #2b3a55;
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  text-transform: capitalize;
+}
+
+.card p {
+  color: #6c757d;
+  margin: 0.15rem 0;
+  font-size: 0.8rem;
 }
 
 .card:hover {
-  transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border: 3px solid #4a90e2;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.container.winner {
+  background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+}
+.winner-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+  color: #2196f3;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  border: 2px solid #2196f3;
+}
+
+h2 {
+  text-align: center;
+  color: #2196f3;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-h2 {
-  text-align: center;
-  color: grey;
-}
-h3 {
-  color: blue;
 }

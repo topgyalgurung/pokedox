@@ -1,7 +1,6 @@
-
 import Pokedex from "./Pokedex";
 import RefreshButton from "./Button";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Pokegame = ({ pokedoxFeatures }) => {
   // Pokegame should take list of 8 pokemon and randomly assign into two hands of 4 cards
@@ -41,11 +40,9 @@ const Pokegame = ({ pokedoxFeatures }) => {
   const isHand1Winner = totalExp1 > totalExp2;
 
   return (
-    <div>
+    <div className="pokegame">
       <Pokedex pokemon={hand1} totalExp={totalExp1} isWinner={isHand1Winner} />
-
-      <RefreshButton/>
-
+      <RefreshButton />
       <Pokedex pokemon={hand2} totalExp={totalExp2} isWinner={!isHand1Winner} />
     </div>
   );
